@@ -39,10 +39,13 @@ function renderAvatar(data) {
     // 设置欢迎
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name).removeClass('lucency')
     // 判断有没有头像
+    console.log(data);
     if (data.user_pic) {
+        console.log(1);
         //  渲染图片头像
         $('.layui-nav-img').prop('src', data.user_pic).removeClass('lucency').show().next().hide()
     } else {
+        console.log(2);
         // 渲染字体头像
         let letter = data.username[0].toUpperCase()
         $('.layui-nav-img').hide().next().text(letter).removeClass('lucency').show()
