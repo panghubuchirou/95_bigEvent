@@ -1,5 +1,5 @@
 $(function () {
-    let path = 'http://www.liulongbin.top:3007'
+
     let form = layui.form
     let layer = layui.layer
 
@@ -25,13 +25,12 @@ $(function () {
         }
     })
 
-
     // 登录
     $('#form-login').on('submit', function (event) {
         event.preventDefault()
         $.ajax({
             type: "POST",
-            url: path + "/api/login",
+            url: "/api/login",
             data: $(this).serialize(),
             success: res => {
                 if (res.status !== 0) {
@@ -51,7 +50,7 @@ $(function () {
         event.preventDefault()
         $.ajax({
             type: "POST",
-            url: path + "/api/reguser",
+            url: "/api/reguser",
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
